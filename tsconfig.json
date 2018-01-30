@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "rootDir": "./",
+    "outDir": "./build/",
+    "module": "commonjs",
+    "declaration": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "inlineSources": true
+  },
+  "include": [
+    "./app/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
