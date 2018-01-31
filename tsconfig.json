@@ -3,6 +3,7 @@
         "target": "es5",
         "module": "system",
         "sourceMap": true,
+        "declaration": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "moduleResolution": "node",
@@ -11,6 +12,9 @@
         "suppressImplicitAnyIndexErrors": true,
         "inlineSources": true
     },
+    "include": [
+            "./app/**/*"
+    ],
     "exclude": [
         "node_modules"
     ]

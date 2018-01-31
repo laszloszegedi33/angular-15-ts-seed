@@ -9,9 +9,6 @@
 
 <body>
     <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
-        </div>
         <ul class="nav navbar-nav">
             <li><a ui-sref="home">Home</a></li>
             <li><a ui-sref="about">About</a></li>
@@ -25,7 +22,7 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="system.config.js"></script>
     <script>
-        System.import('app/boot');
+        System.import('app');
     </script>
 </body>
 
