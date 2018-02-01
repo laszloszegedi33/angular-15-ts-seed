@@ -1,4 +1,4 @@
-# angular1-typescript-systemjs
+# angular-15-ts
 An example on how to use TypeScript with AngularJS 1.* and SystemJS module loader
 
 ## Quick Start
@@ -8,7 +8,12 @@ An example on how to use TypeScript with AngularJS 1.* and SystemJS module loade
   npm install
   ```
 
-3. Run the application
+3. Install ng annotate
+  ```bash
+  npm install -g ng-annotate
+  ```
+
+4. Run the application
   ```bash
   npm start
   ```
