@@ -1,0 +1,5 @@
+- compile(:watch) with gulp task into dist folder
+- copy static assets folder into src folder
+- set systemJS default extensions (.ts in src folder, .js in dist folder)
+- node js server (static routing)
+- routing with HTML5 mode
