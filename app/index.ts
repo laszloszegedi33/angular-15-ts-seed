@@ -3,7 +3,7 @@ import 'angular-ui-router';
 import { AppModule } from './app.module.js';
 
 export function bootstrap() {
-    angular.bootstrap(document, [AppModule['module'].name], {strictDi: true});
+    angular.bootstrap(document, [AppModule['module'].name]);
 }
 
 bootstrap();

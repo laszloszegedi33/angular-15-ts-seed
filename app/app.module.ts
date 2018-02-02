@@ -5,12 +5,6 @@ import { AppComponent } from './app.component.js';
 import { HomePageComponent } from "./home/home.component.js";
 import { AboutPageComponent } from "./about/about.component.js";
 
-export interface IComponentState extends angular.ui.IState {
-    state: string;
-    component?: any;
-    views?: { [name: string]: IComponentState };
-}
-
 @NgModule({
     id: 'AppModule',
     imports: [
@@ -22,27 +16,11 @@ export interface IComponentState extends angular.ui.IState {
         AboutPageComponent
     ]
 })
-export class AppModule {
-    private static setTemplate(state: IComponentState) {
-        const selector = state.component.selector;
-        state.template = `<${selector}></${selector}>`;
-        delete state.component;
-    }
-
-    private static provideStates(states: IComponentState[], $stateProvider: angular.ui.IStateProvider) {
-        states.forEach(state => $stateProvider.state(state.state, state));
-    }
-
+export class AppModule implements NgModule {
     /*@ngInject*/
-    config($urlRouterProvider: angular.ui.IUrlRouterProvider,
+    static config($urlRouterProvider: angular.ui.IUrlRouterProvider,
            $stateProvider: angular.ui.IStateProvider) {
-        AppModule.provideStates(Routes, $stateProvider);
+        Routes.forEach(state => $stateProvider.state(state.name, state));
         $urlRouterProvider.otherwise('/');
-    }
-
-    /*@ngInject*/
-    run($window: angular.IWindowService, $q: angular.IQService) {
-        // replace browser Promise to $q in app
-        $window.Promise = $q;
     }
 }

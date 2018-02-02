@@ -1,6 +1,6 @@
-import { IComponentState } from "./app.module.js";
+import * as angular from 'angular';
 
-export const Routes: IComponentState[] = [
-    { state: 'home', url: '/', template: '<home-page></home-page>' },
-    { state: 'about', url: '/about', component: '<about-page></about-page>' }
+export const Routes: angular.ui.IState[] = [
+    { name: 'home', url: '/', template: '<home-page></home-page>' },
+    { name: 'about', url: '/about', template: '<about-page></about-page>' }
 ];

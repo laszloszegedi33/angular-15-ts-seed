@@ -11,6 +11,12 @@
 
         <script src="node_modules/systemjs/dist/system.src.js"></script>
         <script src="system.config.js"></script>
-        <script src="app/bootstrap.js"></script>
+        <script>
+            SystemJS.import('./app/index.js').then(function () {
+                console.info('bootstrap finished');
+            }).catch(function (e) {
+                console.error(e);
+            });
+        </script>
     </body>
 </html>
