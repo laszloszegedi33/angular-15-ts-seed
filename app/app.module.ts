@@ -1,9 +1,9 @@
 import * as angular from 'angular';
 import { NgModule } from 'angular-ts-decorators';
-import { routes } from './app.routes';
-import { AppComponent } from './app.component';
-import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
+import { Routes } from './app.routes.js';
+import { AppComponent } from './app.component.js';
+import { HomeComponent } from "./home/home.component.js";
+import { AboutComponent } from "./about/about.component.js";
 
 export interface IComponentState extends angular.ui.IState {
     state: string;
@@ -30,27 +30,29 @@ export class AppModule {
     }
 
     private static provideStates(states: IComponentState[], $stateProvider: angular.ui.IStateProvider) {
-        states.map((config) => {
-            const name = config.state;
-            const namedState = config.views;
-            if (namedState) {
-                const namedViews = Object.keys(namedState);
-                namedViews.forEach((view) => {
-                    AppModule.setTemplate(namedState[view]);
-                });
-            }
-            else {
-                AppModule.setTemplate(config);
-            }
-            delete config.state;
-            return {name, config};
-        }).forEach(state => $stateProvider.state(state.name, state.config));
+        states
+            .map((config) => {
+                const name = config.state;
+                const namedState = config.views;
+                if (namedState) {
+                    const namedViews = Object.keys(namedState);
+                    namedViews.forEach((view) => {
+                        AppModule.setTemplate(namedState[view]);
+                    });
+                }
+                else {
+                    AppModule.setTemplate(config);
+                }
+                delete config.state;
+                return {name, config};
+            })
+            .forEach(state => $stateProvider.state(state.name, state.config));
     }
 
     /*@ngInject*/
     config($urlRouterProvider: angular.ui.IUrlRouterProvider,
            $stateProvider: angular.ui.IStateProvider) {
-        AppModule.provideStates(routes, $stateProvider);
+        AppModule.provideStates(Routes, $stateProvider);
         $urlRouterProvider.otherwise('/');
     }
 

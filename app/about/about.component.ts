@@ -5,7 +5,7 @@ import { Component } from 'angular-ts-decorators';
     templateUrl: `app/about/about.html`
 })
 export class AboutComponent {
-    static selector: 'home-page';
+    static selector: 'about-page';
 
     constructor() {}
 }

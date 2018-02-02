@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "system",
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": true,
         "sourceMap": true,
         "declaration": true,
         "emitDecoratorMetadata": true,

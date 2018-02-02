@@ -16,9 +16,11 @@
   "devDependencies": {
     "@types/angular": "^1.6.42",
     "@types/angular-ui-router": "^1.1.40",
+    "@types/jquery": "^3.3.0",
     "@types/systemjs": "^0.20.6",
     "angular-ts-decorators": "0.0.23",
     "concurrently": "^1.0.0",
+    "es-module-loader": "^2.2.8",
     "gulp": "^3.9.1",
     "gulp-ng-annotate": "^2.1.0",
     "gulp-typescript": "^3.2.4",
@@ -26,11 +28,12 @@
     "ng-annotate-loader": "^0.2.0",
     "reflect-metadata": "^0.1.12",
     "tslib": "^1.9.0",
-    "typescript": "2.2.2"
+    "typescript": "2.7.1"
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.14",
     "angular": "^1.4.8",
-    "systemjs": "^0.19.9"
+    "systemjs": "0.19.31",
+    "traceur": "0.0.111"
   }
 }
