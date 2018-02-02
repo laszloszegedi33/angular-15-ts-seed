@@ -8,3 +8,7 @@ gulp.task('compile', function () {
         .pipe(tsProject())
         .pipe(gulp.dest('app'));
 });
+
+gulp.task('compile:watch', function () {
+    gulp.watch('app/**/*.ts', ['compile']);
+});

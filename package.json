@@ -11,7 +11,8 @@
   "keywords": [
     "angular",
     "typescript",
-    "systemjs"
+    "systemjs",
+    "angular-ts-decorators"
   ],
   "devDependencies": {
     "@types/angular": "^1.6.42",

@@ -15,7 +15,7 @@ An example on how to use TypeScript with AngularJS 1.* and SystemJS module loade
 
 4. Compile ts files
   ```bash
-  npm run tsc / gulp compile
+  gulp compile:watch
   ```
 
 5. Run the application
