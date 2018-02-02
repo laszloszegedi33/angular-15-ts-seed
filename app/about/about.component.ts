@@ -1,11 +1,9 @@
 import { Component } from 'angular-ts-decorators';
 
 @Component({
-    selector: 'about-page',
+    selector: 'aboutPage',
     templateUrl: `app/about/about.html`
 })
-export class AboutComponent {
-    static selector: 'about-page';
-
+export class AboutPageComponent {
     constructor() {}
 }

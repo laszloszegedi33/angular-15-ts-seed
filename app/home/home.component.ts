@@ -1,11 +1,9 @@
 import { Component } from 'angular-ts-decorators';
 
 @Component({
-    selector: 'home-page',
+    selector: 'homePage',
     templateUrl: `app/home/home.html`
 })
-export class HomeComponent {
-    static selector: 'home-page';
-
+export class HomePageComponent {
     constructor() {}
 }

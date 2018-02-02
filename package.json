@@ -18,7 +18,7 @@
     "@types/angular-ui-router": "^1.1.40",
     "@types/jquery": "^3.3.0",
     "@types/systemjs": "^0.20.6",
-    "angular-ts-decorators": "0.0.23",
+    "angular-ts-decorators": "^3.0.5",
     "concurrently": "^1.0.0",
     "es-module-loader": "^2.2.8",
     "gulp": "^3.9.1",

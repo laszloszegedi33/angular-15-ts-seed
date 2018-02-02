@@ -2,8 +2,8 @@ import * as angular from 'angular';
 import { NgModule } from 'angular-ts-decorators';
 import { Routes } from './app.routes.js';
 import { AppComponent } from './app.component.js';
-import { HomeComponent } from "./home/home.component.js";
-import { AboutComponent } from "./about/about.component.js";
+import { HomePageComponent } from "./home/home.component.js";
+import { AboutPageComponent } from "./about/about.component.js";
 
 export interface IComponentState extends angular.ui.IState {
     state: string;
@@ -12,14 +12,14 @@ export interface IComponentState extends angular.ui.IState {
 }
 
 @NgModule({
-    name: 'AppModule',
+    id: 'AppModule',
     imports: [
         'ui.router'
     ],
     declarations: [
         AppComponent,
-        HomeComponent,
-        AboutComponent
+        HomePageComponent,
+        AboutPageComponent
     ]
 })
 export class AppModule {
@@ -30,23 +30,7 @@ export class AppModule {
     }
 
     private static provideStates(states: IComponentState[], $stateProvider: angular.ui.IStateProvider) {
-        states
-            .map((config) => {
-                const name = config.state;
-                const namedState = config.views;
-                if (namedState) {
-                    const namedViews = Object.keys(namedState);
-                    namedViews.forEach((view) => {
-                        AppModule.setTemplate(namedState[view]);
-                    });
-                }
-                else {
-                    AppModule.setTemplate(config);
-                }
-                delete config.state;
-                return {name, config};
-            })
-            .forEach(state => $stateProvider.state(state.name, state.config));
+        states.forEach(state => $stateProvider.state(state.state, state));
     }
 
     /*@ngInject*/
