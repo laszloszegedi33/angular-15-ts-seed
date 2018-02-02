@@ -24,4 +24,8 @@ export class HomePageComponent implements OnInit {
             this._items = response.data.value;
         });
     }
+
+    itemInitialized(itemId: string): void {
+        console.info('item is initialized', itemId);
+    }
 }
