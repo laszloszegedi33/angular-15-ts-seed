@@ -1,14 +1,7 @@
 var gulp = require('gulp'),
-    ts = require('gulp-typescript'),
-    ngAnnotate = require('gulp-ng-annotate');
+    ts = require('gulp-typescript');
 
 var tsProject = ts.createProject('tsconfig.json');
-
-gulp.task('annotate', function () {
-    return gulp.src('app/**/*.js')
-        .pipe(ngAnnotate())
-        .pipe(gulp.dest('app'));
-});
 
 gulp.task('compile', function () {
     return gulp.src('app/**/*.ts')
