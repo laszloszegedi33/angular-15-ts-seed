@@ -1,9 +1,11 @@
 import * as angular from 'angular';
 import { NgModule } from 'angular-ts-decorators';
-import { Routes } from './app.routes.js';
-import { AppComponent } from './app.component.js';
-import { HomePageComponent } from "./home/home.component.js";
-import { AboutPageComponent } from "./about/about.component.js";
+import { Routes } from './config/app.routes.js';
+import { AppComponent } from './components/app/app.component.js';
+import { HomePageComponent } from "./components/home.page/home.page.component.js";
+import { AboutPageComponent } from "./components/about.page/about.page.component.js";
+import { ClickedDirective } from './directives/clicked/clicked.directive.js';
+import { ItemsService } from './services/items.service.js';
 
 @NgModule({
     id: 'AppModule',
@@ -13,8 +15,10 @@ import { AboutPageComponent } from "./about/about.component.js";
     declarations: [
         AppComponent,
         HomePageComponent,
-        AboutPageComponent
-    ]
+        AboutPageComponent,
+        ClickedDirective
+    ],
+    providers: [ItemsService]
 })
 export class AppModule implements NgModule {
     /*@ngInject*/
