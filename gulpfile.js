@@ -1,14 +1,19 @@
 var gulp = require('gulp'),
-    ts = require('gulp-typescript');
+    ts = require('gulp-typescript'),
+    del = require('del');
 
 var tsProject = ts.createProject('tsconfig.json');
 
 gulp.task('compile', function () {
     return gulp.src('app/**/*.ts')
         .pipe(tsProject())
-        .pipe(gulp.dest('app'));
+        .pipe(gulp.dest(tsProject.options.outDir));
 });
 
 gulp.task('compile:watch', function () {
     gulp.watch('app/**/*.ts', ['compile']);
+});
+
+gulp.task('clean', function() {
+    del(['dist', 'app/**/*.js', 'app/**/*.d.ts']);
 });

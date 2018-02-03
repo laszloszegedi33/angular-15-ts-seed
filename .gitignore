@@ -3,3 +3,4 @@ app/**/*.map
 app/**/*.d.ts
 node_modules
 .idea
+dist
