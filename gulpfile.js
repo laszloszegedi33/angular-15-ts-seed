@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     ts = require('gulp-typescript'),
+    nodemon = require('gulp-nodemon');
     del = require('del');
 
 var tsProject = ts.createProject('tsconfig.json');
@@ -17,3 +18,9 @@ gulp.task('compile:watch', function () {
 gulp.task('clean', function() {
     del(['dist', 'app/**/*.js', 'app/**/*.d.ts']);
 });
+
+gulp.task('serve', function() {
+    nodemon({
+        'script': 'server.js'
+    });
+})
