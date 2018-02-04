@@ -15,7 +15,8 @@
         "outDir": "dist/src"
     },
     "include": [
-            "./app/**/*"
+            "./src/app/**/*",
+            "./src/server/**/*"
     ],
     "exclude": [
         "node_modules"
