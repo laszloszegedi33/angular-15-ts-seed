@@ -1,8 +1,8 @@
 import { IHttpResponse } from 'angular';
 
 import { Component, OnInit } from 'angular-ts-decorators';
-import { template } from './home.page.component.tpl.js';
-import { ItemsService, Item, ODataResponse } from '../../services/items.service.js';
+import { template } from './home.page.component.tpl';
+import { ItemsService, Item, ODataResponse } from '../../services/items.service';
 
 @Component({
     selector: 'homePage',

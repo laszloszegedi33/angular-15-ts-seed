@@ -11,10 +11,12 @@
         "removeComments": false,
         "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": true,
-        "inlineSources": true
+        "inlineSources": true,
+        "outDir": "dist/src"
     },
     "include": [
-            "./app/**/*"
+            "./src/app/**/*",
+            "./src/server/**/*"
     ],
     "exclude": [
         "node_modules"

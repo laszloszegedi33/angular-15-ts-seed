@@ -1,5 +1,8 @@
+var BASE_URL = '/app';
+
 SystemJS.config({
-    baseURL: "app/",
+    baseURL: BASE_URL,
+    defaultJSExtensions: true,
     paths: {
         "npm:": "../node_modules/"
     },
@@ -19,4 +22,10 @@ SystemJS.config({
             exports: 'angular'
         }
     }
+});
+
+SystemJS.import('index').then(function () {
+    console.info('bootstrap finished');
+}).catch(function (e) {
+    console.error(e);
 });

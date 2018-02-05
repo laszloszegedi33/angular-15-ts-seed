@@ -1,6 +1,6 @@
 import * as angular from 'angular';
 import { Injectable } from 'angular-ts-decorators';
-import { apiUrl } from '../config/constants.js';
+import { apiUrl } from '../config/constants';
 
 export interface Item {
     _id: string;
