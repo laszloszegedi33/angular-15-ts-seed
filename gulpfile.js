@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     ts = require('gulp-typescript'),
-    nodemon = require('gulp-nodemon');
+    nodemon = require('gulp-nodemon'),
     runSequence = require('run-sequence').use(gulp),
     del = require('del');
 
@@ -39,13 +39,14 @@ gulp.task('clean', function() {
 
 gulp.task('build', function(cb) {
     runSequence('clean', 'compile:ts', 'copy:assets', 'copy:html', 'copy:sysconf', cb);
-})
+});
 
 gulp.task('server', function() {
     nodemon({
-        'script': 'dist/src/server/server.js'
+        'script': 'dist/src/server/server.js',
+        'watch': 'dist/src/server/**/*.js'
     });
-})
+});
 
 gulp.task('start', function() {
     runSequence('build', 'watch', 'server');

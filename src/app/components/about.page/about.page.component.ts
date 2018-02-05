@@ -1,5 +1,5 @@
 import { Component } from 'angular-ts-decorators';
-import { template } from './about.page.component.tpl.js';
+import { template } from './about.page.component.tpl';
 
 @Component({
     selector: 'aboutPage',

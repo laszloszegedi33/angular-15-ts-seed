@@ -1,4 +1,4 @@
-var BASE_URL = 'dist/src';
+var BASE_URL = '/app';
 
 SystemJS.config({
     baseURL: BASE_URL,

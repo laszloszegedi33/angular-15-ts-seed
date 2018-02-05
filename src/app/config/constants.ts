@@ -1,1 +1,1 @@
-export const apiUrl = 'https://epam-webshop.herokuapp.com/items';
+export const apiUrl = 'https://epam-webshop.herokuapp.com/items?$top=10';
