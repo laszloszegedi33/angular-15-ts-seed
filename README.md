@@ -10,15 +10,10 @@ An example on how to use TypeScript with AngularJS 1.* and SystemJS module loade
 
 3. Install ng annotate
   ```bash
-  npm install -g ng-annotate
+  npm install -g gulp
   ```
 
 4. Compile ts files
   ```bash
-  gulp compile:watch
-  ```
-
-5. Run the application
-  ```bash
-  npm run lite
+  gulp start
   ```
