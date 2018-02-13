@@ -29,6 +29,10 @@ export class AppModule implements NgModule {
                   $locationProvider: angular.ILocationProvider) {
         Routes.forEach(state => $stateProvider.state(state.name, state));
         $urlRouterProvider.otherwise('/');
-        $locationProvider.hashPrefix('');
+
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
     }
 }
